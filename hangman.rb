@@ -58,10 +58,12 @@ class Hangman
         end
       else
         @lives -= 1
+        hangman_graphic
         puts "Sorry... you have only #{ @lives } lives left. Try again!"
         make_guess
       end
     else
+      hangman_graphic
       puts "Game over😭... better luck next time!"
     end
   end
@@ -75,6 +77,87 @@ class Hangman
     make_guess
   end
 
+  def hangman_graphic
+    case @lives
+    when 6
+      puts ""
+      puts "      _________ "
+      puts "      |        |"
+      puts "               |"
+      puts "               |"
+      puts "               |"
+      puts "               |"
+      puts "               |"
+      puts "               |"
+      puts "    ============"
+    when 5
+      puts ""
+      puts "      _________ "
+      puts "      |        |"
+      puts "      O        |"
+      puts "               |"
+      puts "               |"
+      puts "               |"
+      puts "               |"
+      puts "               |"
+      puts "    ============"
+    when 4
+      puts ""
+      puts "      _________ "
+      puts "      |        |"
+      puts "      O        |"
+      puts "      |        |"
+      puts "      |        |"
+      puts "               |"
+      puts "               |"
+      puts "               |"
+      puts "    ============"
+    when 3
+      puts ""
+      puts "      _________ "
+      puts "      |        |"
+      puts "      O        |"
+      puts "      |/       |"
+      puts "      |        |"
+      puts "               |"
+      puts "               |"
+      puts "               |"
+      puts "    ============"
+    when 2
+      puts ""
+      puts "      _________ "
+      puts "      |        |"
+      puts "      O        |"
+      puts "     \\|/       |"
+      puts "      |        |"
+      puts "               |"
+      puts "               |"
+      puts "               |"
+      puts "    ============"
+    when 1
+      puts ""
+      puts "      _________ "
+      puts "      |        |"
+      puts "      O        |"
+      puts "     \\|/       |"
+      puts "      |        |"
+      puts "     /         |"
+      puts "               |"
+      puts "               |"
+      puts "    ============"
+    when 0
+      puts ""
+      puts "      _________ "
+      puts "      |        |"
+      puts "      O        |"
+      puts "     \\|/       |"
+      puts "      |        |"
+      puts "     / \\       |"
+      puts "               |"
+      puts "               |"
+      puts "    ============"
+    end
+  end
 end
 
 game = Hangman.new
